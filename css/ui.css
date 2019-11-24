@@ -1,0 +1,213 @@
+/* Elements ============ */
+/* Tabs */
+.nav-tab {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex; }
+  .nav-tab__item {
+    margin-right: 2rem; }
+  .nav-tab__link {
+    display: block;
+    padding: 0 4.1rem; }
+
+.tab-cont {
+  display: block; }
+  .tab-cont.is-hidden {
+    display: none; }
+
+/* Video */
+.video {
+  position: relative;
+  overflow: hidden;
+  height: 0;
+  padding-bottom: 56.25%; }
+  .video video, .video iframe, .video object, .video embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; }
+
+.videobg video, .videobg iframe, .videobg object, .videobg embed {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -100;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  -ms-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+  background-size: cover; }
+
+/* Range  */
+.range__row {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: -1rem;
+  margin-right: -1rem;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center; }
+
+.range__item {
+  width: 50%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-bottom: 2rem; }
+  .range__item input {
+    height: 37px;
+    border: 2px solid #393939;
+    background-color: #ffffff;
+    text-align: center;
+    font-size: 12px;
+    color: #393939;
+    font-weight: 500;
+    width: 100%; }
+
+.range-scroll {
+  margin: 0 12px 40px 12px;
+  background-color: #c9cecf;
+  height: 2px;
+  position: relative; }
+  .range-scroll .ui-slider-range {
+    background-color: #000;
+    height: 2px;
+    position: relative; }
+  .range-scroll .ui-slider-handle {
+    width: 23px;
+    height: 28px;
+    border: 3px solid #fbfbfb;
+    background-color: #ea5922;
+    display: block;
+    position: absolute;
+    top: -14px;
+    margin-left: -12px;
+    cursor: pointer; }
+    .range-scroll .ui-slider-handle span {
+      position: absolute;
+      bottom: -18px;
+      left: 50%;
+      width: 50px;
+      text-align: center;
+      font-size: 10px;
+      margin-left: -25px;
+      font-weight: 500;
+      color: #94a6aa; }
+
+/* loader */
+.loaded .main-wrapper {
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s; }
+
+.loaded .icon-load {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex; }
+
+.icon-load {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: none;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: auto; }
+
+.ball {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 1.5rem;
+  background: white;
+  opacity: 0.3; }
+
+.a {
+  margin-right: 1rem;
+  -webkit-animation: ball-a 0.7s ease-out 0s infinite alternate;
+  animation: ball-a 0.7s ease-out 0s infinite alternate; }
+
+.b {
+  margin-right: 1rem;
+  -webkit-animation: ball-b 0.7s ease-out 0.2s infinite alternate;
+  animation: ball-b 0.7s ease-out 0.2s infinite alternate; }
+
+.c {
+  -webkit-animation: ball-c 0.7s ease-out 0.4s infinite alternate;
+  animation: ball-c 0.7s ease-out 0.4s infinite alternate; }
+
+@-webkit-keyframes ball-a {
+  from {
+    height: 2rem;
+    opacity: 0.3;
+    background: white; }
+  to {
+    height: 7rem;
+    opacity: 1;
+    background: green; } }
+
+@keyframes ball-a {
+  from {
+    height: 2rem;
+    opacity: 0.3;
+    background: white; }
+  to {
+    height: 7rem;
+    opacity: 1;
+    background: green; } }
+
+@-webkit-keyframes ball-b {
+  from {
+    height: 2rem;
+    opacity: 0.3;
+    background: white; }
+  to {
+    height: 6.5rem;
+    opacity: 1;
+    background: yellow; } }
+
+@keyframes ball-b {
+  from {
+    height: 2rem;
+    opacity: 0.3;
+    background: white; }
+  to {
+    height: 6.5rem;
+    opacity: 1;
+    background: yellow; } }
+
+@-webkit-keyframes ball-c {
+  from {
+    height: 2rem;
+    opacity: 0.3;
+    background: white; }
+  to {
+    height: 6rem;
+    opacity: 1;
+    background: red; } }
+
+@keyframes ball-c {
+  from {
+    height: 2rem;
+    opacity: 0.3;
+    background: white; }
+  to {
+    height: 6rem;
+    opacity: 1;
+    background: red; } }
