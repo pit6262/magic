@@ -66,6 +66,28 @@ $(function(){
 
 	openMobileLoginForm()
 
+	function showMoreText() {
+    	var htTu = $('.mobile-text-short').height();
+	    if(htTu < 450) {
+	    	$('.mobile-text-short').addClass('open')
+	    	$('.mobile-text-open').hide()
+	    }
+    	$('.mobile-text-open a').on('click', function(){
+	    	$(this).parents().prev('.mobile-text-short').toggleClass('open');
+	    	// $(this).next().slideToggle(400);
+	        namebl = $(this).html();
+	        if(namebl == 'Развернуть описание'){
+	            $(this).html('Cвернуть');
+	        }else{
+	           $(this).html('Развернуть описание');
+	        }
+	    	return false;
+	    });
+
+    }
+    showMoreText();
+
+
 
 	/* Tabs */
 	/* ---------------------------------------------- */
@@ -79,6 +101,21 @@ $(function(){
 		return false
 	});
 
+
+	$('.js-minus').click(function () {
+		var $input = $(this).parent().find('input');
+		var count = parseInt($input.val()) - 1;
+		count = count < 1 ? 1 : count;
+		$input.val(count);
+		$input.change();
+		return false;
+	});
+	$('.js-plus').click(function () {
+		var $input = $(this).parent().find('input');
+		$input.val(parseInt($input.val()) + 1);
+		$input.change();
+		return false;
+	});
 	/* Plugins */
 	/* ---------------------------------------------- */
 
@@ -251,6 +288,33 @@ $(function(){
 			
 		});
 	};
+
+	if($('.similar-products-slider').length){
+
+		
+		$('.similar-products-slider').slick({
+			slidesToShow: 1,
+			slidesToScroll: 1,
+			rows: 4,
+			slidesPerRow: 1,
+			infinite: false,
+			fade: true,
+			appendArrows: '.similar-products-slider-pagination',
+			prevArrow: '<button class="slick-arrow slick-prev"><svg class="icon icon-arrow-left"><use xlink:href="#icon-arrow-left"></use></svg></button>',
+			nextArrow: '<button class="slick-arrow slick-next"><svg class="icon icon-arrow-right"><use xlink:href="#icon-arrow-right"></use></svg></button>',
+			responsive: [{
+				breakpoint: 991, 
+				settings: {
+					rows: 1,
+					// slidesToShow: 3,
+					slidesToScroll: 1,
+
+				}
+			
+			}]
+		});
+	};
+
 
 	
 
