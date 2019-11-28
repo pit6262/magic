@@ -30,6 +30,30 @@ $(function(){
 
 	openUserMenu();
 
+	function openFilter() {	
+		$(".open-filter").on('click',function(){
+			$('body').addClass('lock');
+			$('.filter-wrapper').toggleClass("is-open");
+			
+		});
+
+		$(document).on('click', '.filter-wrapper, .filter-wrapper .container', function(e){
+			if (e.target !== this) 
+				return;
+			$('.filter-wrapper').removeClass('is-open');
+			$('body').removeClass('lock');
+			return false;
+		});
+
+		$(".filter__close").on('click',function(){
+			$('body').removeClass('lock');
+			$('.filter-wrapper').removeClass("is-open");
+			
+		});
+	}
+
+	openFilter();
+
 	function openMobileMenu() {	
 		$('.m-menu li:not(.m-menu__item).dropdown > a').on('click', function(){
 			$(this).closest('.m-sub-menu').addClass('is-sub-menu-open')
@@ -66,7 +90,7 @@ $(function(){
 
 	openMobileLoginForm()
 
-	function showMoreText() {
+	function showMoreTextMobile() {
     	var htTu = $('.mobile-text-short').height();
 	    if(htTu < 450) {
 	    	$('.mobile-text-short').addClass('open')
@@ -85,7 +109,51 @@ $(function(){
 	    });
 
     }
+    showMoreTextMobile();
+
+    function showMoreText() {
+    	
+	   
+    	$('.text-open a').on('click', function(){
+	    	$(this).parents('.text-wrap').toggleClass('is-open');
+	    	
+	        namebl = $(this).html();
+	        if(namebl == 'Развернуть описание'){
+	            $(this).html('Cвернуть');
+	        }else{
+	           $(this).html('Развернуть описание');
+	        }
+	    	return false;
+	    });
+
+    }
     showMoreText();
+
+    function openSidebarMenu() {	
+		$('.s-dropdown > a').on('click', function(){
+			$(this).parent().toggleClass('is-active')
+			return false;
+		});
+
+	}
+	openSidebarMenu();
+
+	function openAllNavFilter() {	
+		$('.view-more').on('click', function(){
+			namebl = $(this).html();
+			if(namebl == '+ Ещё'){
+				$(this).html('Cвернуть');
+				$(this).parents('.filter__item').find('.is-hidden').removeClass('is-hidden').addClass('i-visible')
+			}else{
+				$(this).html('+ Ещё');
+				$(this).parents('.filter__item').find('.i-visible').removeClass('i-visible').addClass('is-hidden')
+			}
+			
+			return false;
+		});
+
+	}
+	openAllNavFilter();
 
 
 
@@ -121,7 +189,9 @@ $(function(){
 
 	/* Styler */
 	if($('.styler').length){
-		$('.styler').styler();
+		$('.styler').styler({
+			singleSelectzIndex: '5',
+		});
 	};
 
 	/* Styler */
@@ -314,6 +384,75 @@ $(function(){
 			}]
 		});
 	};
+
+	if($('.s-best-product-slider').length){
+
+		
+		$('.s-best-product-slider').slick({
+			slidesToShow: 1,
+			slidesToScroll: 1,
+			infinite: false,
+			fade: true,
+			appendArrows: '.s-best-product-slider-pagination',
+			prevArrow: '<button class="slick-arrow slick-prev"><svg class="icon icon-arrow-left"><use xlink:href="#icon-arrow-left"></use></svg></button>',
+			nextArrow: '<button class="slick-arrow slick-next"><svg class="icon icon-arrow-right"><use xlink:href="#icon-arrow-right"></use></svg></button>',
+			
+		});
+	};
+
+
+
+
+
+	/*  Ползунок ================*/
+	if($("#range" ).length>0){
+		$("#range" ).slider({
+			range: true,
+			min: 0,
+			max: 1100,
+			values: [200, 900],
+			slide: function( event, ui ){
+				$('#rangefrom').val(ui.values[0]);
+				$('#rangeto').val(ui.values[1]);
+
+				$('.count1').text(ui.values[0]);
+				$('.count2').text(ui.values[1]);
+				
+			},
+
+		});
+		$('#rangefrom').val($( "#range" ).slider( "values", 0 ));
+		$('#rangeto').val($( "#range" ).slider( "values", 1 ));
+
+		$('.count1').text($( "#range" ).slider( "values", 0 ));
+		$('.count2').text($( "#range" ).slider( "values", 1 ));
+
+		
+		$( "#rangefrom" ).on("input", function(){
+			if($(this).val()*1>$( "#range" ).slider( "option","max")*1){
+				$(this).parent().find('.count1').text($( "#range" ).slider( "option","max"));
+				$(this).val($( "#range" ).slider( "option","max"));
+			}
+			if($(this).val()*1<$( "#range" ).slider( "option","min")*1){
+				$(this).parent().find('.count1').text($( "#range" ).slider( "option","min"));
+				$(this).val($( "#range" ).slider( "option","min"));
+			}
+			$("#range" ).slider( "values",0,$(this).val());
+		});
+		$( "#rangeto" ).on("input", function(){
+			if($(this).val()*1>$( "#range" ).slider( "option","max")*1){
+				$(this).parent().find('.count2').text($( "#range" ).slider( "option","max"));
+				$(this).val($( "#range" ).slider( "option","max"));
+			}
+			if($(this).val()*1<$( "#range" ).slider( "option","min")*1){
+				$(this).parent().find('.count2').text($( "#range" ).slider( "option","min"));
+				$(this).val($( "#range" ).slider( "option","min"));
+			}
+			$("#range" ).slider( "values",1,$(this).val());
+		});
+
+	}
+
 
 
 	
