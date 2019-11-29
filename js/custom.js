@@ -155,7 +155,33 @@ $(function(){
 	}
 	openAllNavFilter();
 
+	function dopBlock() {	
+		$(".drop-button").on('click',function(){
+			$(this).toggleClass("is-active").parent().toggleClass('is-open');
+			$('.overlay').show();
+			
+		});
 
+		$(".drop-menu li").on('click',function(){
+			var thisBlock = $(this)
+			var thisHtml = $(this).html()
+			$(this).parent().find('li').not(thisBlock).removeClass('is-active')
+			$(this).addClass("is-active");
+			$(this).closest('.drop').addClass('is-change').find('.drop-button').html(thisHtml)
+
+			$(this).closest('.drop').removeClass("is-open").find('.drop-button').removeClass('is-active');
+			$('.overlay').hide();
+		});
+		$(document).on('click', '.overlay', function(e){
+			if (e.target !== this) 
+				return;
+			$(".drop-button").removeClass("is-active").parent().removeClass('is-open');
+			$('.overlay').hide();
+			return false;
+		});
+	}
+
+	dopBlock();
 
 	/* Tabs */
 	/* ---------------------------------------------- */
@@ -428,28 +454,30 @@ $(function(){
 		$('.count2').text($( "#range" ).slider( "values", 1 ));
 
 		
-		$( "#rangefrom" ).on("input", function(){
-			if($(this).val()*1>$( "#range" ).slider( "option","max")*1){
-				$(this).parent().find('.count1').text($( "#range" ).slider( "option","max"));
-				$(this).val($( "#range" ).slider( "option","max"));
-			}
-			if($(this).val()*1<$( "#range" ).slider( "option","min")*1){
-				$(this).parent().find('.count1').text($( "#range" ).slider( "option","min"));
-				$(this).val($( "#range" ).slider( "option","min"));
-			}
-			$("#range" ).slider( "values",0,$(this).val());
-		});
-		$( "#rangeto" ).on("input", function(){
-			if($(this).val()*1>$( "#range" ).slider( "option","max")*1){
-				$(this).parent().find('.count2').text($( "#range" ).slider( "option","max"));
-				$(this).val($( "#range" ).slider( "option","max"));
-			}
-			if($(this).val()*1<$( "#range" ).slider( "option","min")*1){
-				$(this).parent().find('.count2').text($( "#range" ).slider( "option","min"));
-				$(this).val($( "#range" ).slider( "option","min"));
-			}
-			$("#range" ).slider( "values",1,$(this).val());
-		});
+		// $( "#rangefrom" ).on("input", function(){
+		// 	if($(this).val()*1>$( "#range" ).slider( "option","max")*1){
+		// 		$(this).parent().find('.count1').text($( "#range" ).slider( "option","max"));
+		// 		$(this).val($( "#range" ).slider( "option","max"));
+		// 	}
+		// 	if($(this).val()*1<$( "#range" ).slider( "option","min")*1){
+		// 		$(this).parent().find('.count1').text($( "#range" ).slider( "option","min"));
+		// 		$(this).val($( "#range" ).slider( "option","min"));
+		// 	}
+		// 	$("#range" ).slider( "values",0,$(this).val().parents('.range__item').find('.count1').text());
+			
+		// });
+		// $( "#rangeto" ).on("input", function(){
+		// 	if($(this).val()*1>$( "#range" ).slider( "option","max")*1){
+		// 		$(this).parent().find('.count2').text($( "#range" ).slider( "option","max"));
+		// 		$(this).val($( "#range" ).slider( "option","max"));
+		// 	}
+		// 	if($(this).val()*1<$( "#range" ).slider( "option","min")*1){
+		// 		$(this).parent().find('.count2').text($( "#range" ).slider( "option","min"));
+		// 		$(this).val($( "#range" ).slider( "option","min"));
+		// 	}
+		// 	$("#range" ).slider( "values",1,$(this).val().parents('.range__item').find('.count2').text());
+
+		// });
 
 	}
 

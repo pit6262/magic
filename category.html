@@ -25,8 +25,8 @@
 				</div>
 				<div class="logo">
 					<a href="#">
-						<img src="img/logo.png" alt="" class="hidden-xs">
-						<img src="img/logo-mini.png" alt="" class="visible-xs">
+						<img src="img/logo.svg" alt="" class="hidden-xs">
+						<img src="img/logo-adapt.svg" alt="" class="visible-xs">
 					</a>
 				</div>
 				<nav class="m-navbar">
@@ -364,6 +364,27 @@
 									<div class="filter__header">
 										<div class="filter__header-title">Фильтры</div>
 									</div>
+									<div class="sorting visible-xs">
+										<div class="sorting__wrap ">
+											<div class="sorting__title">Сортировка:</div>
+											<div class="sorting__items">
+												<div class="drop is-change">
+													<div class="drop-button"><svg class="icon icon-reverse icon-sorting"><use xlink:href="#icon-sorting"></use></svg> Новизна</div>
+													<div class="drop-block">
+														<ul class="drop-menu">
+															<li><svg class="icon icon-reverse icon-sorting"><use xlink:href="#icon-sorting"></use></svg> Новизна</li>
+															<li><svg class="icon icon-sorting"><use xlink:href="#icon-sorting"></use></svg> Новизна</li>
+															<li><svg class="icon icon-reverse icon-sorting"><use xlink:href="#icon-sorting"></use></svg> Цена</li>
+															<li><svg class="icon icon-sorting"><use xlink:href="#icon-sorting"></use></svg> Цена</li>
+															<li><svg class="icon icon-reverse icon-sorting"><use xlink:href="#icon-sorting"></use></svg> Название</li>
+															<li><svg class="icon icon-sorting"><use xlink:href="#icon-sorting"></use></svg> Название</li>
+														</ul>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									
 									<div class="filter__item">
 										<div class="filter__title">Бренд</div>
 										<ul class="filter-nav">
@@ -436,7 +457,7 @@
 													<span class="range__text rub">
 														<span class="count count1"></span>
 													</span>
-													<input type="text" id="rangefrom" value="200"/>
+													<input type="text" id="rangefrom" value="200" readonly="" />
 													
 												</div>
 												<div class="range__devider">-</div>
@@ -444,7 +465,7 @@
 													<span class="range__text rub">
 														<span class="count count2"></span>
 													</span>
-													<input type="text" id="rangeto" value="900"/>
+													<input type="text" id="rangeto" value="900" readonly="" />
 													
 												</div>
 											</div>
@@ -565,12 +586,20 @@
 									</div>
 								</div>
 								<div class="visible-md">
-									<select  class="styler" data-placeholder="Сортировка">
-										<option value=""></option>
-										<option value="">Цена</option>
-										<option value="">Новизна</option>
-										<option value="">Название</option>
-									</select>
+									<div class="drop">
+										<div class="drop-button" data-placeholder="Сортировка"></div>
+										<div class="drop-block">
+											<ul class="drop-menu">
+												<li><svg class="icon icon-reverse icon-sorting"><use xlink:href="#icon-sorting"></use></svg> Новизна</li>
+												<li><svg class="icon icon-sorting"><use xlink:href="#icon-sorting"></use></svg> Новизна</li>
+												<li><svg class="icon icon-reverse icon-sorting"><use xlink:href="#icon-sorting"></use></svg> Цена</li>
+												<li><svg class="icon icon-sorting"><use xlink:href="#icon-sorting"></use></svg> Цена</li>
+												<li><svg class="icon icon-reverse icon-sorting"><use xlink:href="#icon-sorting"></use></svg> Название</li>
+												<li><svg class="icon icon-sorting"><use xlink:href="#icon-sorting"></use></svg> Название</li>
+											</ul>
+										</div>
+									</div>
+
 								</div>
 							</div>
 							<div class="col-lg-4 col-md-5 hidden-sm">
@@ -788,12 +817,19 @@
 									</div>
 								</div>
 								<div class="visible-md">
-									<select  class="styler" data-placeholder="Сортировка">
-										<option value=""></option>
-										<option value="">Цена</option>
-										<option value="">Новизна</option>
-										<option value="">Название</option>
-									</select>
+									<div class="drop">
+										<div class="drop-button" data-placeholder="Сортировка"></div>
+										<div class="drop-block">
+											<ul class="drop-menu">
+												<li><svg class="icon icon-reverse icon-sorting"><use xlink:href="#icon-sorting"></use></svg> Новизна</li>
+												<li><svg class="icon icon-sorting"><use xlink:href="#icon-sorting"></use></svg> Новизна</li>
+												<li><svg class="icon icon-reverse icon-sorting"><use xlink:href="#icon-sorting"></use></svg> Цена</li>
+												<li><svg class="icon icon-sorting"><use xlink:href="#icon-sorting"></use></svg> Цена</li>
+												<li><svg class="icon icon-reverse icon-sorting"><use xlink:href="#icon-sorting"></use></svg> Название</li>
+												<li><svg class="icon icon-sorting"><use xlink:href="#icon-sorting"></use></svg> Название</li>
+											</ul>
+										</div>
+									</div>
 								</div>
 							</div>
 							<div class="col-lg-4 col-md-5">
@@ -877,7 +913,7 @@
 					<a href="#" class="footer-nav__link">Контакты</a>
 				</nav>
 				<div class="footer-wrap__left">
-					<div class="footer__logo"><a href="#"><img src="img/footer-logo.png" alt=""></a></div>
+					<div class="footer__logo"><a href="#"><img src="img/footer-logo.svg" alt=""></a></div>
 				</div>
 				<div class="footer-wrap__middle">
 					<nav class="footer-nav hidden-sm">
