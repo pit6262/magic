@@ -210,6 +210,54 @@ $(function(){
 		$input.change();
 		return false;
 	});
+
+	$('.form-input').focus(function(){
+		var label = $(this).prev('.label');
+		var value = $(this).val();
+
+		if(value == ''){
+			label.stop().css({ 'top': '0', });
+			$(this).parent().addClass('focus')
+		} else {
+			label.css({ 'top': '0' });
+
+		}
+	}).blur(function(){
+		var label = $(this).prev('.label');
+		var value = $(this).val();
+		var full = value.replace(/\+7\(\d{3}\) \d{3} \d{4}/g, "")=="" ? true: false;
+		if ($(this).hasClass('tel')) {
+		    if(value == '' || !full){
+		      label.stop().css({ 'top': '1rem', });
+		      $(this).parent().removeClass('focus')
+		    }
+		   }
+	});
+
+	$('.promocode input').focus(function(){
+		var label = $(this).prev('.label');
+		var value = $(this).val();
+
+		if(value == ''){
+			label.stop().css({ 'display': 'none', });
+			$(this).parent().addClass('focus')
+		} else {
+			label.css({ 'display': 'none' });
+
+		}
+	}).blur(function(){
+		var label = $(this).prev('.label');
+		var value = $(this).val();
+		if(value == ''){
+			label.stop().css({ 'display': 'block', });
+			$(this).parent().removeClass('focus')
+
+		} 
+	});
+
+
+
+
 	/* Plugins */
 	/* ---------------------------------------------- */
 
@@ -220,7 +268,17 @@ $(function(){
 		});
 	};
 
-	/* Styler */
+	/* MASK */
+	
+	$('input.tel').inputmask('+7(999) 999 9999',{
+		clearIncomplete: true,
+		clearMaskOnLostFocus: true,
+		showMaskOnHover: false,
+
+	});
+
+	
+	/* Slick Slider */
 
 	if($('.banner-slider').length){
 

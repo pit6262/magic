@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="format-detection" content="telephone=no">
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, maximum-scale=1">
-	<title>Magic - Оформление заказа step 1</title>
+	<title>Magic - Оформление заказа step 2</title>
 	<link rel="stylesheet" type="text/css" href="css/style.css" />
 	<link rel="stylesheet" type="text/css" href="css/bootstrap-grid.css" />
 	<link rel="stylesheet" type="text/css" href="css/slick.css" />
@@ -130,11 +130,13 @@
 	
 					<div class="nav-menu__form hidden-md">
 						<form action="#">
-							<div class="form-field">
-								<input type="email" class="form-input" placeholder="Ваш e-mail">
+							<div class="form-field form-lg">
+								<span class="label">Ваш e-mail</span>
+								<input type="email" class="form-input" >
 							</div>
-							<div class="form-field">
-								<input type="password" class="form-input" placeholder="Пароль">
+							<div class="form-field form-lg">
+								<span class="label">Пароль</span>
+								<input type="password" class="form-input" >
 							</div>
 							<div class="form-button">
 								<input type="submit" value="Войти" class="btn btn--block">
@@ -250,8 +252,9 @@
 					<div class="nav-menu__item">
 						<h6 class="nav-menu__title">Подписка на рассылку</h6>
 						<form action="#">
-							<div class="form-field form-field--icon">
-								<input type="email" class="form-input" placeholder="Ваш e-mail">
+							<div class="form-field form-field--icon form-lg">
+								<span class="label">Ваш e-mail</span>
+								<input type="email" class="form-input">
 								<span class="form-icon">
 									<svg class="icon icon-email"><use xlink:href="#icon-email"></use></svg>
 								</span>
@@ -299,71 +302,189 @@
 		<div class="container ">
 			<div class="cont-block">
 				<form action="#">
-					<div class="c-inner-block">
-						<div class="h6">Ваш регион <span class="star">*</span></div>
-						<div class="form-field form-field--icon-left">
-							<input type="text" class="form-input" placeholder="Начните вводить название города и выберите его в списке">
-							<span class="form-icon"><svg class="icon icon-magnifying-glass"><use xlink:href="#icon-magnifying-glass"></use></svg></span>
+					<div class="row">
+						<div class="col-lg-9">
+							<div class="c-inner-block">
+								<div class="h6">Ваш регион <span class="star">*</span></div>
+								<div class="form-field form-field--icon-left">
+									<span class="label">
+										<span class="hidden-xs">Начните вводить название города и выберите его в списке</span>
+										<span class="visible-xs">Начните вводить название города </span>
+									</span>
+									<input type="text" class="form-input">
+									<span class="form-icon"><svg class="icon icon-magnifying-glass"><use xlink:href="#icon-magnifying-glass"></use></svg></span>
+								</div>
+							</div>
+							<div class="c-inner-block">
+								<div class="h6">Доставка</div>
+								<div class="row radio-row">
+									<div class="col-md-6 d-flex">
+										<label class="radio-group">
+											<input type="radio" name="delivery" checked="">
+											<span class="radio__figure"></span>
+											<span class="radio-group__content">
+												<span class="radio-group__title">СДЭК (Доставка курьером)</span>
+												<span class="radio-group__text">Срок доставки: 12-14 дней <br>Стоимость:  <span class="rub">300</span></span>
+											</span>
+										</label>
+									</div>
+									<div class="col-md-6 d-flex">
+										<label class="radio-group">
+											<input type="radio" name="delivery">
+											<span class="radio__figure"></span>
+											<span class="radio-group__content">
+												<span class="radio-group__title">Почта России / EMS</span>
+												<span class="radio-group__text">Срок доставки: 14-21 дней <br>Стоимость:  <span class="rub">350</span></span>
+											</span>
+										</label>
+									</div>
+									<div class="col-md-6 d-flex">
+										<label class="radio-group">
+											<input type="radio" name="delivery">
+											<span class="radio__figure"></span>
+											<span class="radio-group__content">
+												<span class="radio-group__title">СДЭК (Самовывоз)</span>
+												<span class="radio-group__text">Срок доставки: 12-14 дней <br>Стоимость:  <span class="rub">350</span></span>
+												<span class="radio-group__text">
+													<a href="#"><strong>Выбрать пункт самовывоза</strong></a>
+												</span>
+											</span>
+										</label>
+									</div>
+									<div class="col-md-6 d-flex">
+										<label class="radio-group">
+											<input type="radio" name="delivery">
+											<span class="radio__figure"></span>
+											<span class="radio-group__content">
+												<span class="radio-group__title">Самовывоз из шоурума</span>
+												<span class="radio-group__text">Стоимость: <span class="rub">0</span></span>
+												<span class="radio-group__text">г. Москва, ул. Ленинская Слобода, 19, 1 этаж.</span>
+											</span>
+										</label>
+									</div>
+								</div>
+							</div>
+							<div class="c-inner-block">
+								<div class="h6">Оплата</div>
+								<div class="row radio-row">
+									<div class="col-md-6 d-flex">
+										<label class="radio-group">
+											<input type="radio" name="payment">
+											<span class="radio__figure"></span>
+											<span class="radio-group__content">
+												<span class="radio-group__title">Наличными при получении</span>
+												<span class="radio-group__text">Оплата наличными курьеру при получении заказа</span>
+											</span>
+										</label>
+									</div>
+									<div class="col-md-6 d-flex">
+										<label class="radio-group">
+											<input type="radio" name="payment"  checked="">
+											<span class="radio__figure"></span>
+											<span class="radio-group__content">
+												<span class="radio-group__title">Оплата картой онлайн</span>
+												<span class="radio-group__text">Оплата через защищенный шлюз Сбербанка России</span>
+											</span>
+										</label>
+									</div>
+								</div>
+							</div>
+							<div class="c-inner-block">
+								<div class="h6">Данные получателя заказа <span class="star">*</span></div>
+								<div class="row">
+									<div class="col-md-4">
+										<div class="form-field">
+											<span class="label">Ваше имя</span>
+											<input type="text" class="form-input" >
+										</div>
+									</div>
+									<div class="col-md-4">
+										<div class="form-field">
+											<span class="label">Фамилия</span>
+											<input type="text" class="form-input" >
+										</div>
+									</div>
+									<div class="col-md-4">
+										<div class="form-field">
+											<span class="label">Отчество</span>
+											<input type="text" class="form-input" >
+										</div>
+									</div>
+									<div class="col-md-4">
+										<div class="form-field">
+											<span class="label">Телефон</span>
+											<input type="tel" class="form-input tel" >
+										</div>
+									</div>
+									<div class="col-md-4">
+										<div class="form-field">
+											<span class="label">E-mail</span>
+											<input type="email" class="form-input" >
+										</div>
+									</div>
+									<div class="col-12">
+										<div class="form-field">
+											<span class="label">Адрес доставки</span>
+											<input type="text" class="form-input" >
+										</div>
+									</div>
+									<div class="col-12">
+										<div class="form-field">
+											<span class="label">Комментарий к заказу</span>
+											<input type="text" class="form-input" >
+										</div>
+									</div>
+								</div>
+							</div>
+							
 						</div>
-					</div>
-					<div class="c-inner-block">
-						<div class="h6">Доставка</div>
-						<div class="row">
-							<div class="col-lg-6 d-flex">
-								<label class="radio-group">
-									<input type="radio" name="delivery" checked="">
-									<span class="radio__figure"></span>
-									<span class="radio-group__content">
-										<span class="radio-group__title">СДЭК (Доставка курьером)</span>
-										<span class="radio-group__text">Срок доставки: 12-14 дней <br>Стоимость:  <span class="rub">300</span></span>
-									</span>
-								</label>
+						<div class="col-lg-3">
+							<div class="row no-gutters block-row">
+								<div class="col-lg-12 col-sm-6 block-row__item">
+									<div class="block-gray">
+										<p><strong>В заказе 2 товара на сумму <span class="rub">2 400</span></strong></p>
+										<ul class="b-order-list">
+											<li class="b-order-list__item">Увлажняющая маска с экстрактом огурца <br> 1 шт. х  <span class="rub">700</span> </li>
+											<li class="b-order-list__item">Органическое масло арганы 30 мл. <br> 2 шт. х  <span class="rub">1 700</span> </li>
+										</ul>
+										<a href="#" class="link link--sm"><strong>Вернуться в корзину</strong></a>
+									</div>
+								</div>
+								<div class="col-lg-12 col-sm-6 block-row__item">
+									<div class="block-gray d-flex flex-column">
+										<div class="total">
+											<div class="total__tr">
+												<div class="total__td">Доставка:</div>
+												<div class="total__td"><span class="rub">300</span></div>
+											</div>
+											<div class="total__tr">
+												<div class="total__td">Товары:</div>
+												<div class="total__td"><span class="rub">2 400</span></div>
+											</div>
+											<div class="total__tr">
+												<div class="total__td">Скидка:</div>
+												<div class="total__td"><span class="rub">100</span></div>
+											</div>
+											<div class="total__tr">
+												<div class="total__td">Итого:</div>
+												<div class="total__td"><span class="rub">2 700</span></div>
+											</div>
+										</div>
+
+										<div class="promocode">
+											<div class="form-field form-field--icon">
+												<span class="label"><span class="pm-1">Промокод для скидки</span><span class="pm-2">Промокод</span></span>
+												<input type="text" class="promocode__input">
+												<span class="form-icon"><svg class="icon icon-check"><use xlink:href="#icon-check"></use></svg></span>
+											</div>
+										</div>
+									</div>
+								</div>
 							</div>
-							<div class="col-lg-6 d-flex">
-								<label class="radio-group">
-									<input type="radio" name="delivery">
-									<span class="radio__figure"></span>
-									<span class="radio-group__content">
-										<span class="radio-group__title">Почта России / EMS</span>
-										<span class="radio-group__text">Срок доставки: 14-21 дней <br>Стоимость:  <span class="rub">350</span></span>
-									</span>
-								</label>
-							</div>
-							<div class="col-lg-6 d-flex">
-								<label class="radio-group">
-									<input type="radio" name="delivery">
-									<span class="radio__figure"></span>
-									<span class="radio-group__content">
-										<span class="radio-group__title">СДЭК (Самовывоз)</span>
-										<span class="radio-group__text">Срок доставки: 12-14 дней <br>Стоимость:  <span class="rub">350</span></span>
-										<span class="radio-group__text">
-											<a href="#"><strong>Выбрать пункт самовывоза</strong></a>
-										</span>
-									</span>
-								</label>
-							</div>
-							<div class="col-lg-6 d-flex">
-								<label class="radio-group">
-									<input type="radio" name="delivery">
-									<span class="radio__figure"></span>
-									<span class="radio-group__content">
-										<span class="radio-group__title">Самовывоз из шоурума</span>
-										<span class="radio-group__text">Стоимость: <span class="rub">0</span></span>
-										<span class="radio-group__text">г. Москва, ул. Ленинская Слобода, 19, 1 этаж.</span>
-									</span>
-								</label>
-							</div>
+							<a href="#" class="btn btn--block">Сделать заказ</a>
 						</div>
-					</div>
-					<div class="c-inner-block">
-						
-					</div>
-					<div class="c-inner-block">
-						
 					</div>
 				</form>
-			
-				
 			</div>
 		</div>
 
@@ -556,6 +677,7 @@
 <script src="js/jquery-3.2.1.min.js"></script>
 <script src="js/slick.min.js"></script>
 <script src="js/jquery.formstyler.min.js"></script>
+<script src="js/jquery.inputmask.bundle.min.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
 <script src="js/jquery.ui.touch-punch.min.js"></script>
 <script src="https://api-maps.yandex.ru/2.1/?apikey=dfeede90-0c41-4832-a234-cf7898175c75&lang=ru_RU&onload=getYaMap"></script>
