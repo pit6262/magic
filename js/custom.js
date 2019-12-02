@@ -486,3 +486,38 @@ $(function(){
 	
 
 });
+
+function getYaMap(){
+	if($('#map').length){
+	ymaps.ready(init); // карта соберется после загрузки скрипта и элементов
+		var myMap1; // заглобалим переменную карты чтобы можно было ею вертеть из любого места
+		function init () { // функция - собиралка карты и фигни
+			var myMap = new ymaps.Map("map", {
+				center: [55.707555, 37.651314], 
+				zoom: 15,
+				controls: ['geolocationControl', 'zoomControl']
+			});
+			myMap.behaviors.disable('scrollZoom', 'drag'); 
+
+			myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
+			// hintContent: 'Собственный значок метки',
+			// balloonContent: 'Это красивая метка'
+			}, {
+			// Опции.
+			// Необходимо указать данный тип макета.
+			iconLayout: 'default#image',
+			// Своё изображение иконки метки.
+			iconImageHref: 'img/pin.png',
+			// Размеры метки.
+			iconImageSize: [50, 64],
+			// Смещение левого верхнего угла иконки относительно
+			// её "ножки" (точки привязки).
+
+			})
+
+			/* Добавляем метки на карту */
+			myMap.geoObjects.add(myPlacemark);
+		}
+
+	}
+}
