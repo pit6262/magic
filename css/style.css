@@ -2178,7 +2178,7 @@ img {
     .range__text:after {
       position: relative;
       vertical-align: middle;
-      top: .1rem;
+      line-height: 2.4rem;
       font-size: 1.3rem !important; }
 
 .range-scroll {
