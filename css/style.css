@@ -2151,14 +2151,14 @@ img {
       height: 2.6rem;
       border: 0.1rem solid #e3e2e2;
       background-color: #ffffff;
-      padding: 0 .9rem;
       font-size: 1.2rem;
       color: #3a3b3c;
       font-family: Montserrat;
       font-weight: 400;
       width: 100%; }
     .range__item input {
-      line-height: normal; }
+      line-height: normal;
+      padding: 0 .9rem; }
   .range__devider {
     margin: 0 1.8rem;
     margin-bottom: .3rem; }
@@ -2166,19 +2166,21 @@ img {
     position: absolute;
     top: 0;
     left: 0;
+    display: block;
     pointer-events: none;
     white-space: nowrap;
-    font-size: 0;
+    padding: .5rem .9rem;
     background-color: transparent !important; }
     .range__text .count {
       opacity: 0;
       display: inline-block;
-      vertical-align: middle;
-      line-height: 1.5; }
+      vertical-align: top;
+      line-height: 1.2; }
     .range__text:after {
       position: relative;
-      vertical-align: middle;
-      line-height: 2.4rem;
+      vertical-align: top;
+      line-height: 1.2;
+      top: -.1rem;
       font-size: 1.3rem !important; }
 
 .range-scroll {
