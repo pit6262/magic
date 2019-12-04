@@ -2165,7 +2165,6 @@ img {
     .range__text .count {
       opacity: 0; }
     .range__text:after {
-      vertical-align: middle;
       position: relative;
       top: -.2rem;
       font-size: 1.3rem !important; }
@@ -3532,7 +3531,7 @@ label {
     overflow-x: auto; }
   .lk-menu {
     margin: 0;
-    border-bottom: .1rem solid #f3f3f3;
+    position: relative;
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -3542,6 +3541,15 @@ label {
     -ms-flex-pack: justify;
     justify-content: space-between;
     white-space: nowrap; }
+    .lk-menu:after {
+      content: '';
+      display: block;
+      height: .1rem;
+      width: 100%;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      background: #f3f3f3; }
     .lk-menu__item {
       margin-right: 2rem; }
       .lk-menu__item:last-child {
@@ -3562,7 +3570,8 @@ label {
         left: 0;
         position: absolute;
         width: 100%;
-        bottom: -.1rem;
+        bottom: 0rem;
+        z-index: 1;
         height: .1rem;
         background: #edbcaa; }
       .lk-menu__link .icon {
@@ -3758,23 +3767,23 @@ label {
   .product-slider__item {
     margin-bottom: 2rem; }
   /* UI */
-  .section--gray .nav-tab-scroll:after {
+  .section--gray .nav-tab-scroll.scroll:after {
     background: url("../img/scroll-gray.svg") no-repeat center;
     -webkit-transform: scale(1);
     -ms-transform: scale(1);
     transform: scale(1); }
-  .section--gray .nav-tab-scroll:before {
+  .section--gray .nav-tab-scroll.scroll:before {
     background: url("../img/scroll-gray.svg") no-repeat center;
     -webkit-transform: scale(-1, 1);
     -ms-transform: scale(-1, 1);
     transform: scale(-1, 1); }
-  .nav-tab {
+  .nav-tab, .lk-menu {
     overflow: hidden;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch; }
-    .nav-tab-scroll {
+    .nav-tab-scroll, .lk-menu-scroll {
       position: relative; }
-      .nav-tab-scroll:after {
+      .nav-tab-scroll.scroll:after, .lk-menu-scroll.scroll:after {
         content: '';
         display: block;
         position: absolute;
@@ -3782,7 +3791,7 @@ label {
         right: 0;
         pointer-events: none;
         width: 9.3rem;
-        height: 100%;
+        height: 4.9rem;
         -webkit-transition: all 0.2s linear;
         transition: all 0.2s linear;
         z-index: 1;
@@ -3790,7 +3799,7 @@ label {
         -webkit-transform: scale(-1, 1);
         -ms-transform: scale(-1, 1);
         transform: scale(-1, 1); }
-      .nav-tab-scroll:before {
+      .nav-tab-scroll.scroll:before, .lk-menu-scroll.scroll:before {
         opacity: 0;
         content: '';
         display: block;
@@ -3799,20 +3808,22 @@ label {
         left: 0;
         pointer-events: none;
         width: 9.3rem;
-        height: 100%;
+        height: 4.9rem;
         -webkit-transition: all 0.2s linear;
         transition: all 0.2s linear;
         z-index: 1;
         background: url("../img/scroll.svg") no-repeat center; }
-      .nav-tab-scroll.scroll-start:before {
+      .nav-tab-scroll.scroll.scroll-start:before, .lk-menu-scroll.scroll.scroll-start:before {
         opacity: 1; }
-      .nav-tab-scroll.scroll-end:after {
+      .nav-tab-scroll.scroll.scroll-end:after, .lk-menu-scroll.scroll.scroll-end:after {
         opacity: 0; }
-    .nav-tab--md-justify {
+    .nav-tab--md-justify, .lk-menu--md-justify {
       -webkit-box-pack: start;
       -webkit-justify-content: flex-start;
       -ms-flex-pack: start;
       justify-content: flex-start; }
+  .lk-menu-scroll.scroll:after, .lk-menu-scroll.scroll:before {
+    height: 4rem; }
   .tab-wrap .ps-paging {
     position: static;
     -webkit-box-pack: justify;
