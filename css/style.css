@@ -1540,9 +1540,9 @@ img {
     background-color: #baadc3; }
   .badge span {
     display: block;
-    -webkit-transform: rotate(90deg);
-    -ms-transform: rotate(90deg);
-    transform: rotate(90deg); }
+    -webkit-writing-mode: tb-rl;
+    -ms-writing-mode: tb-rl;
+    writing-mode: tb-rl; }
 
 .price {
   font-size: 1.8rem;
@@ -2269,7 +2269,7 @@ img {
   to {
     height: 7rem;
     opacity: 1;
-    background: green; } }
+    background: #f1c5cc; } }
 
 @keyframes ball-a {
   from {
@@ -2279,7 +2279,7 @@ img {
   to {
     height: 7rem;
     opacity: 1;
-    background: green; } }
+    background: #f1c5cc; } }
 
 @-webkit-keyframes ball-b {
   from {
@@ -2289,7 +2289,7 @@ img {
   to {
     height: 6.5rem;
     opacity: 1;
-    background: yellow; } }
+    background: #edbcaa; } }
 
 @keyframes ball-b {
   from {
@@ -2299,7 +2299,7 @@ img {
   to {
     height: 6.5rem;
     opacity: 1;
-    background: yellow; } }
+    background: #edbcaa; } }
 
 @-webkit-keyframes ball-c {
   from {
@@ -2309,7 +2309,7 @@ img {
   to {
     height: 6rem;
     opacity: 1;
-    background: red; } }
+    background: #baadc3; } }
 
 @keyframes ball-c {
   from {
@@ -2319,7 +2319,7 @@ img {
   to {
     height: 6rem;
     opacity: 1;
-    background: red; } }
+    background: #baadc3; } }
 
 .overlay {
   display: none;
@@ -3215,8 +3215,7 @@ label {
     padding: 2rem 3rem 6.6rem;
     height: 22.6rem; }
     .lk-likes__img {
-      width: 100%;
-      max-width: 6rem;
+      width: 6rem;
       -webkit-box-ordinal-group: 2;
       -webkit-order: 1;
       -ms-flex-order: 1;
