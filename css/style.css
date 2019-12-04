@@ -2175,7 +2175,6 @@ img {
       opacity: 0; }
     .range__text:after {
       position: relative;
-      vertical-align: top;
       line-height: 1;
       top: -.1rem;
       font-size: 1.3rem !important; }
