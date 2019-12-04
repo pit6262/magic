@@ -1257,7 +1257,6 @@ img {
       height: .9rem;
       margin-top: -.4rem;
       background: url("../img/down-arrow-right.svg") no-repeat center;
-      background-size: .6rem .9rem;
       -webkit-transition: -webkit-transform 0.2s linear;
       transition: -webkit-transform 0.2s linear;
       transition: transform 0.2s linear;
