@@ -17,34 +17,34 @@ function scrolled(o){
 	}
 }
 $(function(){
-	$(window).on('resize load',()=>{
+	$(window).on('resize load',function(){
 		var qw = new Array();
 	    qw = document.getElementsByClassName('nav-tab'); 
 	    var cnt = 0;
 	    for (cnt = 0; cnt < qw.length; cnt++)
 	    {
 	        if(qw.item(cnt).scrollWidth!=qw.item(cnt).clientWidth){
-			$(qw.item(cnt)).parent().addClass('scroll');
+				$(qw.item(cnt)).parent().addClass('scroll');
 			} else {
-			$(qw.item(cnt)).parent().removeClass('scroll');
-		}
+				$(qw.item(cnt)).parent().removeClass('scroll');
+			}
 	           
 	    }
 
 		
 	})
 
-	$(window).on('resize load',()=>{
+	$(window).on('resize load',function(){
 		var qw = new Array();
 	    qw = document.getElementsByClassName('lk-menu'); 
 	    var cnt = 0;
 	    for (cnt = 0; cnt < qw.length; cnt++)
 	    {
 	        if(qw.item(cnt).scrollWidth!=qw.item(cnt).clientWidth){
-			$(qw.item(cnt)).parent().addClass('scroll');
+				$(qw.item(cnt)).parent().addClass('scroll');
 			} else {
-			$(qw.item(cnt)).parent().removeClass('scroll');
-		}
+				$(qw.item(cnt)).parent().removeClass('scroll');
+			}
 	           
 	    }
 
