@@ -3,11 +3,26 @@ $(window).on('load', function(){
 	$('body').removeClass('loaded');
 });
 
+function scrolled(o){
+
+	if(o.scrollLeft > 1 ){
+		$(o).parent().addClass('scroll-start')
+	} else {
+		$(o).parent().removeClass('scroll-start')
+	}
+	if(o.offsetWidth + o.scrollLeft == o.scrollWidth){
+		$(o).parent().addClass('scroll-end')
+	} else {
+		$(o).parent().removeClass('scroll-end')
+	}
+}
 $(function(){
 
-	/* Burger */
+	
+	/* Base */
 	/* ---------------------------------------------- */
 
+	
 	function openUserMenu() {	
 		$(".toggle-menu").on('click',function(){
 			$('.nav-menu-container').toggleClass("is-open");
@@ -82,7 +97,7 @@ $(function(){
 	}
 	openMobileMenu();
 
-	function openMobileLoginForm() {	
+	function openMobileLoginForm() {
 		$('.open-login-form').on('click',function(){
 			$('.nav-menu__form').toggleClass('hidden-md')
 		})
@@ -112,8 +127,6 @@ $(function(){
     showMoreTextMobile();
 
     function showMoreText() {
-    	
-	   
     	$('.text-open a').on('click', function(){
 	    	$(this).parents('.text-wrap').toggleClass('is-open');
 	    	
@@ -125,11 +138,10 @@ $(function(){
 	        }
 	    	return false;
 	    });
-
     }
     showMoreText();
 
-    function openSidebarMenu() {	
+    function openSidebarMenu() {
 		$('.s-dropdown > a').on('click', function(){
 			$(this).parent().toggleClass('is-active')
 			return false;
@@ -138,7 +150,7 @@ $(function(){
 	}
 	openSidebarMenu();
 
-	function openAllNavFilter() {	
+	function openAllNavFilter() {
 		$('.view-more').on('click', function(){
 			namebl = $(this).html();
 			if(namebl == '+ Ещё'){
@@ -155,7 +167,7 @@ $(function(){
 	}
 	openAllNavFilter();
 
-	function dopBlock() {	
+	function dopBlock() {
 		$(".drop-button").on('click',function(){
 			$(this).toggleClass("is-active").parent().toggleClass('is-open');
 			$('.overlay').show();
@@ -195,7 +207,8 @@ $(function(){
 		return false
 	});
 
-
+	/* Counter */
+	/* ---------------------------------------------- */
 	$('.js-minus').click(function () {
 		var $input = $(this).parent().find('input');
 		var count = parseInt($input.val()) - 1;
@@ -211,6 +224,8 @@ $(function(){
 		return false;
 	});
 
+	/* Forms  */
+	/* ---------------------------------------------- */
 	$('.form-input').focus(function(){
 		var label = $(this).prev('.label');
 		var value = $(this).val();
@@ -231,7 +246,13 @@ $(function(){
 		      label.stop().css({ 'top': '1rem', });
 		      $(this).parent().removeClass('focus')
 		    }
+		   } else {
+		   	 if(value == ''){
+		      label.stop().css({ 'top': '1rem', });
+		      $(this).parent().removeClass('focus')
+		    }
 		   }
+
 	});
 
 	$('.promocode input').focus(function(){
@@ -484,10 +505,6 @@ $(function(){
 		});
 	};
 
-
-
-
-
 	/*  Ползунок ================*/
 	if($("#range" ).length>0){
 		$("#range" ).slider({
@@ -538,10 +555,6 @@ $(function(){
 		// });
 
 	}
-
-
-
-	
 
 });
 
