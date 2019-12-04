@@ -2169,7 +2169,7 @@ img {
     display: block;
     pointer-events: none;
     white-space: nowrap;
-    padding: .5rem .9rem;
+    padding: .6rem .9rem;
     background-color: transparent !important; }
     .range__text .count {
       opacity: 0;
@@ -2179,7 +2179,7 @@ img {
     .range__text:after {
       position: relative;
       vertical-align: top;
-      line-height: 1.2;
+      line-height: 1;
       top: -.1rem;
       font-size: 1.3rem !important; }
 
