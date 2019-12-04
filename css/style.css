@@ -2172,10 +2172,7 @@ img {
     padding: .6rem .9rem;
     background-color: transparent !important; }
     .range__text .count {
-      opacity: 0;
-      display: inline-block;
-      vertical-align: top;
-      line-height: 1.2; }
+      opacity: 0; }
     .range__text:after {
       position: relative;
       vertical-align: top;
