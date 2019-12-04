@@ -498,28 +498,53 @@ $(function(){
 
 	if($('.similar-products-slider').length){
 
-		
-		$('.similar-products-slider').slick({
-			slidesToShow: 1,
+		 $slick_slider = $('.similar-products-slider');
+		  settings = {
+		    slidesToShow: 3,
 			slidesToScroll: 1,
-			rows: 4,
-			slidesPerRow: 1,
 			infinite: false,
-			fade: true,
 			appendArrows: '.similar-products-slider-pagination',
 			prevArrow: '<button class="slick-arrow slick-prev"><svg class="icon icon-arrow-left"><use xlink:href="#icon-arrow-left"></use></svg></button>',
 			nextArrow: '<button class="slick-arrow slick-next"><svg class="icon icon-arrow-right"><use xlink:href="#icon-arrow-right"></use></svg></button>',
-			responsive: [{
-				breakpoint: 991, 
-				settings: {
-					rows: 1,
-					// slidesToShow: 3,
-					slidesToScroll: 1,
+			responsive: [
+				{
+					breakpoint: 768, 
+					settings: {
+						
+						variableWidth: true,
+						slidesToScroll: 1,
+						slidesToShow: 2,
 
-				}
+					}
+				},
+				{
+					breakpoint: 574, 
+					settings: {
+						
+						variableWidth: true,
+						slidesToScroll: 1,
+						slidesToShow: 1,		
+					}
 			
 			}]
-		});
+		  }
+		  $slick_slider.slick(settings);
+
+		  // reslick only if it's not slick()
+		  $(window).on('load resize', function() {
+
+		    if ($(window).width() > 973) {
+		      if ($slick_slider.hasClass('slick-initialized')) {
+		        $slick_slider.slick('unslick');
+		      }
+		      return
+		    }
+
+		    if (!$slick_slider.hasClass('slick-initialized')) {
+		      return $slick_slider.slick(settings);
+		    }
+		  });
+		
 	};
 
 	if($('.s-best-product-slider').length){
